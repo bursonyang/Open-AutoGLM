@@ -26,6 +26,7 @@ def get_current_app(device_id: str | None = None) -> str:
     )
     output = result.stdout
     if not output:
+        print(result.stderr)
         raise ValueError("No output from dumpsys window")
 
     # Parse window focus info
